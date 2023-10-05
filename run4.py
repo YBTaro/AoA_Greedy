@@ -8,11 +8,12 @@ for i in range(n):
     array.append([int(numWork), int(total)])
 
 def priority_calculate(numWork, total):
-    return -(((numWork+1)/(total+1))-(numWork/total))
+    return (numWork+1)/(total+1)-numWork/total
 
 queue = PriorityQueue()
 for i, arr in enumerate(array):
-    queue.put((priority_calculate(arr[0], arr[1]), i, arr))
+    # want the max, so add negative sign to priority_calculate
+    queue.put((-priority_calculate(arr[0], arr[1]), i, arr))
 
 
 for i in range(0, k):

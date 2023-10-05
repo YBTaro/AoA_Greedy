@@ -1,13 +1,15 @@
 from queue import PriorityQueue
-n = 10
-k = 8
-array = [[2, 4], [3, 9], [4, 5], [2, 8], [2, 4],
-         [2, 10], [1, 4], [3, 7], [1, 3], [4, 6]]
+
+n, k = input().split()
+n, k = int(n), int(k)
+array = []
+for i in range(n):
+    numWork, total = input().split()
+    array.append([int(numWork), int(total)])
 
 queue = PriorityQueue()
-for i in range(0, len(array)):
-    queue.put((array[i][0], i, array[i]))
-
+for i, arr in enumerate(array):
+    queue.put((arr[0], i, arr))
 
 for i in range(0, k):
     priority, index, bag = queue.get()

@@ -1,14 +1,18 @@
 from queue import PriorityQueue
-n = 10
-k = 8
-array = [[2, 4], [3, 9], [4, 5], [2, 8], [2, 4],
-         [2, 10], [1, 4], [3, 7], [1, 3], [4, 6]]
+
+n, k = input().split()
+n, k = int(n), int(k)
+array = []
+for i in range(n):
+    numWork, total = input().split()
+    array.append([int(numWork), int(total)])
+
+def priority_calculate(numWork, total):
+    return -(((numWork+1)/(total+1))-(numWork/total))
 
 queue = PriorityQueue()
-for i in range(0, len(array)):
-    priority_calculate = -(((array[i][0]+1)/(array[i][1]+1))-((array[i][0])/(array[i][1])))
-    # print(priority_calculate)
-    queue.put((priority_calculate, i, array[i]))
+for i, arr in enumerate(array):
+    queue.put((priority_calculate(arr[0], arr[1]), i, arr))
 
 
 for i in range(0, k):

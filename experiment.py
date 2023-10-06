@@ -99,6 +99,6 @@ def main():
     n_array, k = [1000, 2000, 3000, 4000, 5000], 800
     for n in n_array:
         experiment_result.append(experiment(n, k))
-    print(experiment_result)
+    print(experiment_result) # experiment_result[i] would return an array of four elements, which are [run1, run2, run3, run4]'s result respectively. The length of experiment_result would be the length of n_array
 
 main()

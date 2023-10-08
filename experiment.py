@@ -83,13 +83,13 @@ def plot_result(n_array, result, k):
     # plt.show()
 
 def main():
-    n_array = [100, 200, 300]
+    n_array = [10000, 20000, 30000]
     k_array = [1000, 2000, 3000, 4000, 5000]
 
     array = {n: [] for n in n_array} # dictionary {n1:[],n2:[],n3:[]} This is a dictionary named "array" lol
     for n, arr in array.items():
         for _ in range(n): # randomly create array with n total devices
-            total = random.randint(0, 9999)
+            total = random.randint(1, 9999)
             n_work = random.randint(0, total)
             arr.append([n_work, total])
 

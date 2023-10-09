@@ -1,6 +1,7 @@
 from queue import PriorityQueue
 
 def strat1(n, k, array, print_result=True):
+    # print(array)
     queue = PriorityQueue()
     for i, arr in enumerate(array):
         queue.put((arr[0], i, arr)) # put element according to numWorking

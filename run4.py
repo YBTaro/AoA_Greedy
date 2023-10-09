@@ -5,6 +5,7 @@ def priority_calculate(numWork, total):
     return (numWork+1)/(total+1)-numWork/total
 
 def strat4(n, k, array, print_result=True):
+    # print(array)
     queue = PriorityQueue()
     for i, arr in enumerate(array):
         # want the max, so add negative sign to priority value

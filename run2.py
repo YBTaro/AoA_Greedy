@@ -14,14 +14,14 @@ def strat2(n, k, array, print_result=True):
         result += "%d "%(index)
     
     if print_result:
-        print(result)
+        print(result)   # final result is the bag choosing order
 
     percentage = 0
-    while (not queue.empty()):
+    while (not queue.empty()):  # get all updated bags and calculate the percentage
         _, _, bag = queue.get()
         percentage += bag[0]/bag[1]
     
-    return round(100*percentage/n, 2)   # return final percentage
+    return round(100*percentage/n, 2)   # return final average percentage
 
 if __name__ == "__main__":
     n, k = input().split()  # input reader
